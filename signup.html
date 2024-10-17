@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Modern SignUp Page</title>
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 33, 50, 0.9)), url('https://source.unsplash.com/featured/?cityscape');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-box h1 {
+            font-size: 32px;
+            color: #1c09eb;
+            margin-bottom: 30px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .form-box h1::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: #3a79ff;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .input-field i {
+            margin-right: 10px;
+            color: #1c09eb;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 8px;
+            background: transparent;
+        }
+
+        .btn-field button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1c09eb;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-field button:hover {
+            background-color: #0b0499;
+        }
+
+        .form-box p {
+            font-size: 15px;
+            margin-top: 15px;
+        }
+
+        .form-box p a {
+            color: #1c09eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-box p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Terms and Benefits Section */
+        .terms-benefits {
+            margin-top: 40px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .terms-benefits h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .terms-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .terms-benefits ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .terms-benefits ul li i {
+            margin-right: 10px;
+            color: #00d2ff;
+        }
+
+        @media (max-width: 768px) {
+            .form-box {
+                padding: 20px;
+            }
+
+            .form-box h1 {
+                font-size: 28px;
+            }
+
+            .input-field i {
+                font-size: 18px;
+            }
+
+            .btn-field button {
+                font-size: 16px;
+            }
+
+            .terms-benefits h2 {
+                font-size: 20px;
+            }
+
+            .terms-benefits ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container for Sign Up Form -->
+    <div class="container">
+        <div class="form-box">
+            <h1>Sign Up</h1>
+            <form>
+                <!-- Name Input -->
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Full Name" id="Name" required>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" id="Email_Id" required>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="Password" required>
+                    </div>
+                </div>
+
+                <!-- Sign Up Button -->
+                <div class="btn-field">
+                    <button type="button" id="signupButton" onclick="toggleSignupForm()">Sign Up</button>
+                </div>
+
+                <!-- Log In Link -->
+                <p>Already a member? <a href="login.html">Log In</a></p>
+            </form>
+        </div>
+
+        <!-- Terms and Benefits Section -->
+        <div class="terms-benefits">
+            <h2>Why Sign Up?</h2>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Stay Updated with Latest Features</li>
+                <li><i class="fa-solid fa-check"></i> Unlock Exclusive Content</li>
+                <li><i class="fa-solid fa-check"></i> Personalized Recommendations</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sign Up Script -->
+    <script>
+        async function toggleSignupForm() {
+            const name = document.getElementById("Name").value;
+            const email = document.getElementById("Email_Id").value;
+            const password = document.getElementById("Password").value;
+           
+            const data = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            // Handle signup logic here
+            console.log(data);
+        }
+    </script>
+</body>
+
+</html>

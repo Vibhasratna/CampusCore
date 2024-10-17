@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Modern Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 30, 50, 0.7), rgba(0, 33, 50, 0.9)), url(background_image.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0c4499;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #f3f3f3;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field i {
+            color: #0c4499;
+            margin-right: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 16px;
+        }
+
+        .input-field input::placeholder {
+            color: #bbb;
+        }
+
+        .btn-field {
+            margin: 20px 0;
+        }
+
+        .btn-field button {
+            width: 100%;
+            background-color: #0c4499;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-field button:hover {
+            background-color: #084298;
+        }
+
+        .options {
+            margin: 10px 0;
+        }
+
+        .options a {
+            text-decoration: none;
+            color: #084298;
+            font-size: 14px;
+        }
+
+        /* Social Login Buttons */
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .social-login button {
+            width: 48%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .social-login .facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .social-login .google {
+            background-color: #db4437;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn-field button {
+                font-size: 16px;
+            }
+
+            .social-login button {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Log In</h1>
+
+        <form id="loginForm">
+            <!-- Email Input -->
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address">
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+            </div>
+
+            <!-- Forgot Password and Sign Up -->
+            <div class="options">
+                <p><i>Don't have an account?</i> <a href="sm.html"><b>Join Now</b></a></p>
+                <p><a href="#">Forgot Password?</a></p>
+            </div>
+
+            <!-- Login Button -->
+            <div class="btn-field">
+                <button type="button" id="Btn" onclick="login()">Log In</button>
+            </div>
+        </form>
+
+        <!-- Social Media Login Section -->
+        <div class="social-login">
+            <button class="facebook"><i class="fab fa-facebook"></i> Log In with Facebook</button>
+            <button class="google"><i class="fab fa-google"></i> Log In with Google</button>
+        </div>
+    </div>
+
+    <script>
+        async function login() {
+            const email = document.querySelector('#email').value;
+            const password = document.querySelector('#password').value;
+
+            // Dummy login validation logic (to be replaced with actual authentication logic)
+            try {
+                if (email === "test@example.com" && password === "password") {
+                    alert("Login Successful!");
+                } else {
+                    throw new Error("Invalid email or password");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Invalid Username or Password!");
+                window.location.reload();
+            }
+        }
+
+        document.getElementById('Btn').addEventListener('click', login);
+    </script>
+
+</body>
+
+</html>

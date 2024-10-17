@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('https://www.example.com/background-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-container {
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        fieldset {
+            margin-top: 15px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .radio-group label {
+            margin-bottom: 10px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .form-check input {
+            margin-right: 10px;
+        }
+
+        .checkbox-group {
+            margin-top: 15px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #1e90ff;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0066cc;
+        }
+
+        .info-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .info-section ul {
+            list-style: none;
+        }
+
+        .info-section ul li {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .info-section ul li i {
+            margin-right: 8px;
+            color: #00bcd4;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contact Form Container -->
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form>
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="inputEmail3">Email</label>
+                <input type="email" id="inputEmail3" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Year of Study Radio Group -->
+            <fieldset>
+                <legend>In Which Year You are Studying:</legend>
+                <div class="radio-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">1st Year Student</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">2nd Year Student</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                        <label class="form-check-label" for="gridRadios3">3rd Year Student</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                        <label class="form-check-label" for="gridRadios4">Final Year Student</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Program Checkbox Group -->
+            <div class="checkbox-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" value="option1">
+                    <label class="form-check-label" for="gridCheck1">BTECH IT DATA SCIENCE</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>Why Contact Us?</h2>
+            <ul>
+                <li><i class="fa-solid fa-check-circle"></i> Get assistance with your queries</li>
+                <li><i class="fa-solid fa-check-circle"></i> Learn about upcoming events and workshops</li>
+                <li><i class="fa-solid fa-check-circle"></i> Stay connected with your department</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
