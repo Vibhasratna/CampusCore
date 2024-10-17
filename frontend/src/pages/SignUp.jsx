@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa'; // Import the cross icon
 
 const SignUp = () => {
+    const [name,setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -20,6 +21,7 @@ const SignUp = () => {
         e.preventDefault();
         try {
             const response = await axiosInstance.post("/auth/register", {
+                name:name,
                 email: email,
                 password: password,
             });
@@ -58,6 +60,16 @@ const SignUp = () => {
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <form onSubmit={handleRegister}>
                     <div className="mb-6">
+                        <label className="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                        <input
+                            type="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        />
+                    </div>
+                    <div className="mb-6">
                         <label className="block text-gray-700 text-sm font-medium mb-2">Email</label>
                         <input
                             type="email"
@@ -85,7 +97,8 @@ const SignUp = () => {
                     </button>
                     <div className="mt-4 text-center">
                         <p className="text-gray-600 text-sm">
-                            Already have an account? <Link to="/login" className="text-blue-600 hover:underline">Login</Link>
+                            Already have an account? <Link to="/login"
+                                                           className="text-blue-600 hover:underline">Login</Link>
                         </p>
                     </div>
                 </form>

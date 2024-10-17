@@ -31,7 +31,10 @@ const Login = () => {
             // Update Recoil auth state
             setAuth({
                 isLoggedIn: true,
-                user: { email: response.data.email },
+                user: {
+                    name: response.data.name,
+                    email: response.data.email
+                },
             });
 
             // Navigate to the homepage or another route after login

@@ -7,7 +7,7 @@ const { hashPassword, comparePassword } = require('../../../CampusSocial/backend
 // Register a new user
 exports.register = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { name,email, password } = req.body;
 
         const user = await User.findOne({ email });
         if (user) {
@@ -19,7 +19,7 @@ exports.register = async (req, res) => {
         console.log('Hashed Password during Registration:', hashedPassword);
 
         // Save the user with the hashed password
-        const newUser = new User({ email, password: hashedPassword });
+        const newUser = new User({ name,email, password: hashedPassword });
         await newUser.save();
 
         // Immediately retrieve and log the stored password from the database
@@ -28,6 +28,7 @@ exports.register = async (req, res) => {
         console.log('Stored Hashed Password after Save:', savedUser.password);
 
         res.status(201).json({ message: 'User registered successfully.',
+            name: savedUser.name,
             email: savedUser.email,
             token
         });
@@ -62,6 +63,7 @@ exports.login = async (req, res) => {
         // Generate and return the JWT token
         const token = generateToken(user._id);
         res.status(200).json({
+            name: user.name,
             email: user.email,
             token
         });
