@@ -1,8 +1,22 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Login from "./pages/Login.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Navbar from "./components/Navbar.jsx";
+
+
+
 function App() {
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
-            <h1 className="text-3xl font-bold text-blue-500">Hello, Tailwind CSS!</h1>
-        </div>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="*" element={<div>404 Not Found</div>} />
+            </Routes>
+        </Router>
     );
 }
 
